@@ -1,3 +1,4 @@
+# # 2702213770 - Laurel Evelina Widjaja - Nomor 2
 import pandas as pd
 import numpy as np
 import pickle as pkl

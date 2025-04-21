@@ -1,3 +1,4 @@
+# 2702213770 - Laurel Evelina Widjaja - Nomor 4
 import streamlit as st
 import joblib
 import pandas as pd
@@ -18,7 +19,7 @@ def main():
     no_of_weekend_nights = st.sidebar.number_input('Jumlah Malam Akhir Pekan', min_value=0, value=0)
     no_of_week_nights = st.sidebar.number_input('Jumlah Malam dalam Seminggu', min_value=0, value=0)
     type_of_meal_plan = st.sidebar.selectbox('Jenis Paket Makanan', ['Not Selected', 'Meal Plan 1', 'Meal Plan 2', 'Meal Plan 3'])
-    required_car_parking_space = st.sidebar.radio('Apakah Membutuhkan Tempat Parking?', ['Tidak', 'Iya'])
+    required_car_parking_space = st.sidebar.radio('Apakah Membutuhkan Tempat Parkir?', ['Tidak', 'Iya'])
     room_type_reserved = st.sidebar.selectbox('Jenis Kamar', ['Room_Type 1', 'Room_Type 2', 'Room_Type 3', 'Room_Type 4', 'Room_Type 5', 'Room_Type 6', 'Room_Type 7'])
     lead_time = st.sidebar.number_input('Jumlah Hari Antara Tanggal Pemesanan dan Tanggal Kedatangan', min_value=0, max_value=500, value=0)
     arrival_year = st.sidebar.number_input('Tahun Kedatangan', min_value=2017)

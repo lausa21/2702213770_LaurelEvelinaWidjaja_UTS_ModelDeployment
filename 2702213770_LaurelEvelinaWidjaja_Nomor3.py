@@ -1,12 +1,14 @@
+# 2702213770 - Laurel Evelina Widjaja - Nomor 3
 import pickle
 import pandas as pd
 import warnings
+import joblib
 warnings.filterwarnings('ignore')
 
-def load_model(filename):
+def load_model(model_filename):
     """Load the best model from a pickle file"""
-    with open(filename, 'rb') as file:
-        model = pickle.load(file)
+    with open(model_filename, 'rb') as file:
+        model = joblib.load(file)
     return model
 
 def load_encoder(encoder_filename):
@@ -54,8 +56,7 @@ def predict_with_model(model, label_enc, target_enc, mst_enc, tmp_enc, user_inpu
     return booking_status[0]
 
 def main():
-    model_filename = 'rf_model_oop.pkl'  
-    model = load_model(model_filename)
+    model = load_model('rf_model_oop.pkl')
     label_enc = load_encoder('room_type_reserved_encode_oop.pkl')
     target_enc = load_encoder('booking_status_encode_oop.pkl')
     mst_enc = load_encoder('market_segment_type_encode_oop.pkl')
