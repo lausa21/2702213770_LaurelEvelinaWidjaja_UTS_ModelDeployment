@@ -8,6 +8,7 @@ from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 import pickle
+import joblib
 
 class handleData: 
     def __init__(self, file_path):
@@ -117,8 +118,7 @@ class handleModel:
         print(classification_report(self.y_test, self.y_predict2_rf))
 
     def save_model_to_file(self, model_filename, labelEnc_filename, targetEnc_filename, mstEnc_filename, tmpEnc_filename):
-        with open(model_filename, 'wb') as file:  
-            pickle.dump(self.rf_model, file)
+        joblib.dump(self.rf_model, model_filename, compress=3)
         with open(labelEnc_filename, 'wb') as file:
             pickle.dump(self.label_enc, file) 
         with open(targetEnc_filename, 'wb') as file:
